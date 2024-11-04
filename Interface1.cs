@@ -1,3 +1,5 @@
+using System;
+
 namespace StackLibrary
 {
     public interface IStack
@@ -8,5 +10,7 @@ namespace StackLibrary
         string Read();
         string Pop();
         bool isEqual(IStack other);
+        string WriteStack();
+        void OutputStack();
     }
 }
