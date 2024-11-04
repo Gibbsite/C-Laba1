@@ -1,4 +1,3 @@
-using System;
 using StackLibrary;
 
 class Program
@@ -8,8 +7,8 @@ class Program
         MyStack stack = new MyStack();
         stack.Push("World!");
         stack.Push("Hello");
-        Console.WriteLine(stack.WriteStack());
-        stack.Pop();
-        Console.WriteLine(stack.WriteStack());
+        stack.OutputStack();
+        Console.WriteLine(stack.Pop());
+        stack.OutputStack();
     }
 }
