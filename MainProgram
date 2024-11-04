@@ -1,0 +1,15 @@
+using System;
+using StackLibrary;
+
+class Program
+{
+    static void Main()
+    {
+        MyStack stack = new MyStack();
+        stack.Push("World!");
+        stack.Push("Hello");
+        Console.WriteLine(stack.WriteStack());
+        stack.Pop();
+        Console.WriteLine(stack.WriteStack());
+    }
+}
