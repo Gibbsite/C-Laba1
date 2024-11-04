@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StackLibrary;
+using System.IO;
+using System;
 
 namespace StackTests
 {
@@ -52,6 +54,7 @@ namespace StackTests
 
             Assert.AreEqual(true, stack.isEqual(stack2), "WRONG");
         }
+
         [TestMethod]
         public void Create_Two_Different_Stacks_isEqual_ReturnFalse()
         {
@@ -64,6 +67,32 @@ namespace StackTests
             stack2.Push(group2);
 
             Assert.AreEqual(false, stack.isEqual(stack2), "WRONG");
+        }
+
+        [TestMethod]
+        public void PushItem_WriteStack_ExpectItemInString()
+        {
+            const string group = "ІТШІ-23-1";
+            IStack stack = new MyStack();
+
+            stack.Push(group);
+
+            Assert.AreEqual(group, stack.WriteStack(), "WRONG");
+        }
+
+        [TestMethod]
+        public void PushTwoItems_WriteStack_ExpectItemsInString()
+        {
+            const string group = "ІТШІ-23-1";
+            const string group2 = "ІТШІ-23-2";
+            IStack stack = new MyStack();
+
+            stack.Push(group);
+            stack.Push(group2);
+
+            string result = group2 + " " + group;
+
+            Assert.AreEqual(result, stack.WriteStack(), "WRONG");
         }
     }
 }
